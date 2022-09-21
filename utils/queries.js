@@ -1,7 +1,12 @@
-const db = require('./config/connection')
+const db = require('../config/connection')
 
 function queryDepts(){
-    db.query('SELECT * from departments'). then(data => data)
+    return db.promise().query('SELECT * from department;')
 }
-
-module.exports = {queryDepts}
+function queryRoles(){
+    return db.promise().query('SELECT * from role;')
+}
+function queryNewRole(roleInfo){
+    return db.promise().query('INSERT INTO role SET ?', roleInfo)
+}
+module.exports = {queryDepts, queryRoles, queryNewRole}

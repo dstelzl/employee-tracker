@@ -1,24 +1,30 @@
-INSERT INTO department (id, name)
-VALUES (5, "Web Development"),
-       (10, "Marketing"),
-       (15, "Sales"),
-       (20, "Accounting");
+INSERT INTO department (name)
+VALUES ("Web Development"),
+       ("Marketing"),
+       ("Sales"),
+       ("Accounting");
 
-INSERT INTO role (id, title, salary, department_id)
-VALUES (1, "Developer", 50000.00, 5),
-       (2, "Designer", 45000.00, 5),
-       (3, "Content Creator", 45000.00, 10),
-       (4, "Ads Manager", 45000.00, 10),
-       (5, "Account Exec", 45000.00, 15),
-       (6, "Sales Manager", 45000.00, 15),
-       (7, "Accountant", 45000.00, 20),
-       (8, "Bookeeper", 45000.00, 20);
+INSERT INTO role (title, salary, department_id)
+VALUES ("Developer", 120000.00, 1), #1
+       ("Designer", 90000.00, 1), #2
+       ("Content Creator", 90000.00, 2), #3
+       ("Ads Manager", 95000.00, 2), #4
+       ("Account Exec", 75000.00, 3), #5
+       ("Sales Manager", 150000.00, 3), #6
+       ("Accountant", 95000.00, 4), #7
+       ("Bookeeper", 65000.00, 4); #8
 
-       INSERT INTO employee (id, first_name, last_name, role_id, manager_id)
-VALUES (100, "Bob","Smith", 1),
-       (200, "Designer", 45000.00, 5),
-       (300, "Content Creator", 45000.00, 10),
-       (400, "Ads Manager", 45000.00, 10),
-       (500, "Account Exec", 45000.00, 15, 600),
-       (600, "Sales Manager", 45000.00, 15),
-       (700, "Accountant", 45000.00, 20),
+       INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("Bob","Smith", 1, NULL), #1
+       ("Jill","Fox", 1, NULL), #2
+       ("Jamie","Dean", 3, NULL), #3
+       ("Lisa","Smith", 4, NULL), #4
+       ("Alex","Torres", 1, NULL), #5
+       ("John","Liu", 4, NULL), #6
+       ("Percy","Jackson", 6, NULL), #7
+       ("Alicia","Keyes", 5, 7), #8
+       ("Michael","Crighton", 5, 7), #9
+       ("Jasper","Johns", 2, NULL), #10
+       ("Lindsey","Larkin", 7, NULL), #11
+       ("Jennifer","Giunta", 8, 11); #12
+    
