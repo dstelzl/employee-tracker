@@ -22,15 +22,7 @@ const deptQuestions = [
     message: "What is your new department name?",
   },
 ];
-//
-// const newEmpQuestions=[
-//     {type:"input", name:"empFirstName", message:"What is the First Name of your new employee?"},{type:"input", name:"empLastname", message:"What is the Last Name of your new employee?"},{type:"list", name:"empRole", message:"What is the role/position of your new employee?",
-//    choices:}, {type:"list", name:"empManager", message:"Who does this employee report to?",
-//    choices:}
-// ]
-// const updateEmpQuestions=[
-//     {type:"list", name:"empChoices", message:"Which employee you wish to update?", choices:},
-// ]
+
 const promptMenu = async () => {
   return prompt(menuQuestion);
 };
@@ -64,6 +56,35 @@ const promptRole = async (deptsInfo) => {
   const answer = await prompt(roleQuestions);
   return answer;
 };
+// const promptEmp = async (roleInfo) => {
+//   const roleChoices = roleInfo.map((dept) => {
+//     return {
+//       name: role.title,
+//       value: role.id,
+//     };
+//   });
+
+//   const empQuestions = [
+//     {
+//       type: "input",
+//       name: "first_name",
+//       message: "What is your new employee's first name?",
+//     },
+//     {
+//       type: "input",
+//       name: "last_name",
+//       message: "What is your new employee's last name?",
+//     },
+//     {
+//       type: "list",
+//       name: "role_id",
+//       message: "What is the role of your new employee?",
+//       choices: roleChoices,
+//     },
+//   ];
+//   const answer = await prompt(empQuestions);
+//   return answer;
+// };
 module.exports = { promptMenu, promptRole };
 
 // [{name:"engineering", value:2}]

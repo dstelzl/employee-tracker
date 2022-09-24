@@ -1,4 +1,4 @@
-const { queryDepts, queryRoles, queryNewRole } = require("./queries");
+const { queryDepts, queryRoles, queryNewRole, queryEmps, queryNewEmp, queryNewDept } = require("./queries");
 
 const viewAllDept = async () => {
   const deptInfo = await queryDepts();
@@ -9,23 +9,25 @@ const viewAllRoles = async () => {
   return rolesInfo[0];
 };
 const viewAllEmps = async () => {
-    const EmpsInfo = await queryEmps();
+    const empsInfo = await queryEmps();
     return empsInfo[0];
   };
 
-  const addDept = async () => {
-    const deptInfo = await queryDepts();
+  const addDept = async (deptInfo) => {
+    //const deptInfo = await queryDepts();
+    queryNewDept(deptInfo)
   };
 
 const addRole = async (roleInfo) => {
 //   const deptInfo = await queryDepts();
 queryNewRole(roleInfo)
 };
-const addEmp = async () => {
-    const deptInfo = await queryDepts();
+const addEmp = async (empInfo) => {
+    //const deptInfo = await queryDepts();
+    queryNewEmp(empInfo)
   };
   const updateEmp = async () => {
     const deptInfo = await queryDepts();
   };
 
-module.exports = { viewAllDept, viewAllRoles, addRole };
+module.exports = { viewAllDept, viewAllRoles, addRole, viewAllEmps, addEmp, addDept };

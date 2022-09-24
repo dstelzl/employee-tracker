@@ -1,5 +1,5 @@
 const { promptMenu, promptRole } = require("./utils/questions");
-const { viewAllDept, viewAllRoles, addRole } = require("./utils/functions");
+const { viewAllDept, viewAllRoles, addRole, viewAllEmps } = require("./utils/functions");
 
 function menuPrompt() {
   promptMenu().then(({ menuAns }) => {
